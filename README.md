@@ -57,27 +57,27 @@ $ ./manageBot.py -t TOKEN -p PATH-CONFIG
 _Prefix_: '.'  
 
 __clear__ x: optional[int] = 10  
-  _delete x messages in a channel_  
+> delete x messages in a channel  
 
 __download__ \*files: List[str]  
-  _@files: paths of files_  
-  _upload files to downloads_  
+> @files: paths of files
+> upload files to downloads  
 
 __clear-cache__  
-  _clear ./tmp/_  
+> clear ./tmp/
 
 __sql__ \*args: List[str]  
-  _@args: sqlstatements_  
-  _execute every sqlstatement in args_  
+> @args: sqlstatements
+> execute every sqlstatement in args
   
 __table__ rows: [str], table: [str], where: optional[str] = "", args: optional[str] = ""  
-  _create a sqlstatemant and run sql()_  
-  _"SELECT [rows] FROM [table] WHERE clan_member_statistics.id = clan_members.id and ([where]) [args]"_  
+> create a sqlstatemant and run sql()
+> `SELECT [rows] FROM [table] WHERE clan_member_statistics.id = clan_members.id and ([where]) [args]`
   
 __write-role__ message: [str], role: [discord.Role]  
-  _command send on to a other bot via commad-bridge_  
-  _write [message] to all members of the [role]_  
-  _you can also define fast messages in the config-file_  
+> command send on to a other bot via commad-bridge
+> write [message] to all members of the [role]
+> you can also define fast messages in the config-file
 
 ## userInteraktionBot.py
 
@@ -100,8 +100,8 @@ _Prefix_: '.'
 
 _dm only_  
 __identify__ clan_member: [str -> bool], name: optional[str] = "", name_wot. optional[str] = ""  
-  _complete db with [name] and [name_wot] if clan_member is True_
+> complete db with [name] and [name_wot] if clan_member is True
   
 __update-my-data__ clan_member: [str -> bool], name: optional[str] = "", name_wot. optional[str] = ""  
-  _complete db with [name] and [name_wot] if clan_member is True_  
-  _delete [name] and [name_wot] in db if clan_member is False_
+> complete db with [name] and [name_wot] if clan_member is True
+> delete [name] and [name_wot] in db if clan_member is False
