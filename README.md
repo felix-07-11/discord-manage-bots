@@ -1,6 +1,6 @@
 # discord-manage-bots
-Discord bots to manage the members of the servers
-there are bots to manage a World of Tanks Clan Server, if you don't edit the sourcecode.
+Discord bots to manage the members of the servers.  
+There are bots to manage a World of Tanks Clan Server, if you don't edit the sourcecode.
 
 ## requierements
 - Python libaries:
