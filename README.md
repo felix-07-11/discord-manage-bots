@@ -21,9 +21,6 @@ there are bots to manage a World of Tanks Clan Server, if you don't edit the sou
   clan_member_statistics (id INTEGER PRIMARY KEY UNIQUE NOT NULL, active_days INTEGER DEFAULT 0, missed_extra_invitations INTEGER DEFAULT 0, last_active_date TEXT DEFAULT '', number_of_warnings INTEGER DEFAULT 0)
   ```
   - Config File: format = json, default path = ./rsc/bot.cfg
- 
-- Discord channels
-  - Command-Bridge: a textchannel on which only the bots have permissions to exchange informations or commands.
 
 ## manageBot.py
 
