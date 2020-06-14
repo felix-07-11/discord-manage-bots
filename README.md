@@ -42,7 +42,7 @@ __sql__ \*args: List[str]
   _@args: sqlstatements_  
   _execute every sqlstatement in args_  
   
-__table__ rows: [str], table: [str], args: optional[str] = ""  
+__table__ rows: [str], table: [str], where: optional[str] = "", args: optional[str] = ""  
   _create a sqlstatemant and run sql()_  
   _"SELECT [rows] FROM [table] WHERE clan_member_statistics.id = clan_members.id and ([where]) [args]"_  
 
