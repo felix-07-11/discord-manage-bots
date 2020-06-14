@@ -93,6 +93,9 @@ $ ./userInteractionBot.py -t TOKEN -p PATH-CONFIG
 ```
 ### commands
 
+  - [x] identify  
+  - [ ] update-my-data  
+
 _Prefix_: '.'  
 
 _dm only_  
@@ -100,5 +103,5 @@ __identify__ clan_member: [str -> bool], name: optional[str] = "", name_wot. opt
   _complete db with [name] and [name_wot] if clan_member is True_
   
 __update-my-data__ clan_member: [str -> bool], name: optional[str] = "", name_wot. optional[str] = ""  
-  _complete db with [name] and [name_wot] if clan_member is True_
+  _complete db with [name] and [name_wot] if clan_member is True_  
   _delete [name] and [name_wot] in db if clan_member is False_
