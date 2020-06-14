@@ -74,7 +74,7 @@ _Prefix_: '.'
 > create a sqlstatemant and run sql()
 > `SELECT [rows] FROM [table] WHERE clan_member_statistics.id = clan_members.id and ([where]) [args]`
   
-> __fix__ \*args: List[str]
+> __fix__ \*args: List[str]  
 > try to fix errors
 
 > __write-role__ message: [str], role: [discord.Role]  
