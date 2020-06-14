@@ -37,8 +37,11 @@ $ ./manageBot.py -t TOKEN -p PATH-CONFIG
 ### events
 
 - [x] on_ready  
-- [ ] on_member_update  
-  
+- [x] on_member_update  
+- [x] on_user_update  
+- [x] on_member_remove  
+- [ ] on_voice_state_update  
+
 ### commands
   
 - [x] clear  
@@ -49,7 +52,7 @@ $ ./manageBot.py -t TOKEN -p PATH-CONFIG
 - [x] sql  
 - [x] table  
 - [ ] show  
-- [x] write-role  
+- [x] fix
 
 _Prefix_: '.'  
 
@@ -71,6 +74,9 @@ _Prefix_: '.'
 > create a sqlstatemant and run sql()
 > `SELECT [rows] FROM [table] WHERE clan_member_statistics.id = clan_members.id and ([where]) [args]`
   
+> __fix__ \*args: List[str]
+> try to fix errors
+
 > __write-role__ message: [str], role: [discord.Role]  
 > command send on to a other bot via commad-bridge
 > write [message] to all members of the [role]
@@ -98,6 +104,8 @@ $ ./userInteractionBot.py -t TOKEN -p PATH-CONFIG
 
 - [x] identify  
 - [ ] update-my-data  
+- [x] write-role
+- [x] instert members  
 
 _Prefix_: '.'  
 
