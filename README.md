@@ -14,13 +14,13 @@ there are bots to manage a World of Tanks Clan Server, if you don't edit the sou
   - os
   - typing
 
-- SQL db (if you don't edit code):
-  - tables 
+- Files:
+  - SQL db with tables (default):
   ```sql
   clan_members (id INTEGER PRIMARY KEY UNIQUE NOT NULL, name TEXT, name_discord TEXT, name_displayed TEXT, name_wot TEXT, identification   INTEGER DEFAULT 0)
   clan_member_statistics (id INTEGER PRIMARY KEY UNIQUE NOT NULL, active_days INTEGER DEFAULT 0, missed_extra_invitations INTEGER DEFAULT 0, last_active_date TEXT DEFAULT '', number_of_warnings INTEGER DEFAULT 0)
   ```
-  
+  - Config File: format = json, default path = ./rsc/bot.cfg
 
 ## manageBot.py
 
@@ -44,6 +44,6 @@ __sql__ \*args: List[str]
   
 __table__ rows: [str], table: [str], args: optional[str] = ""  
   _create a sqlstatemant and run sql()_  
-  _"SELECT [rows] FROM [table] WHERE [args]"_  
+  _"SELECT [rows] FROM [table] WHERE clan_member_statistics.id = clan_members.id and ([where]) [args]"_  
 
 ## userInteraktionBot.py
