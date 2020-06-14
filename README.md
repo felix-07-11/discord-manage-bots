@@ -18,7 +18,7 @@ there are bots to manage a World of Tanks Clan Server, if you don't edit the sou
   - tables 
   ```sql
   clan_members (id INTEGER PRIMARY KEY UNIQUE NOT NULL, name TEXT, name_discord TEXT, name_displayed TEXT, name_wot TEXT, identification   INTEGER DEFAULT 0)
-  clan_member_statistics (id INTEGER PRIMARY KEY UNIQUE NOT NULL, active_days INTEGER, missed_extra_invitations INTEGER, last_active_date TEXT, number_of_warnings INTEGER)
+  clan_member_statistics (id INTEGER PRIMARY KEY UNIQUE NOT NULL, active_days INTEGER DEFAULT 0, missed_extra_invitations INTEGER DEFAULT 0, last_active_date TEXT DEFAULT '', number_of_warnings INTEGER DEFAULT 0)
   ```
   
 
