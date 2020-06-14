@@ -26,24 +26,24 @@ there are bots to manage a World of Tanks Clan Server, if you don't edit the sou
 
 ### commands
 
-_Prefix_: '.'
+_Prefix_: '.'  
 
-__clear__ x: optional[int] = 10
-  _delete x messages in a channel_
+__clear__ x: optional[int] = 10  
+  _delete x messages in a channel_  
 
-__download__ \*files: List[str]
-  _@files: paths of files_
-  _upload files to downloads_
+__download__ \*files: List[str]  
+  _@files: paths of files_  
+  _upload files to downloads_  
 
-__clear-cache__
-  _clear ./tmp/_
+__clear-cache__  
+  _clear ./tmp/_  
 
-__sql__ \*args: List[str]
-  _@args: sqlstatements_
-  _execute every sqlstatement in args_
+__sql__ \*args: List[str]  
+  _@args: sqlstatements_  
+  _execute every sqlstatement in args_  
   
-__table__ rows: [str], table: [str], args: optional[str] = ""
-  _create a sqlstatemant and run sql()_
-  _"SELECT [rows] FROM [table] WHERE [args]"_
+__table__ rows: [str], table: [str], args: optional[str] = ""  
+  _create a sqlstatemant and run sql()_  
+  _"SELECT [rows] FROM [table] WHERE [args]"_  
 
 ## userInteraktionBot.py
