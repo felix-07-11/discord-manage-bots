@@ -39,20 +39,20 @@ $ ./manageBot.py -t TOKEN -p PATH-CONFIG
 ```
 ### events
 
-  - [x] on_ready  
-  - [ ] on_member_update  
+- [x] on_ready  
+- [ ] on_member_update  
   
 ### commands
   
-  - [x] clear  
-  - [ ] upload  
-  - [x] download  
-  - [ ] update  
-  - [x] clear cache  
-  - [x] sql  
-  - [x] table  
-  - [ ] show  
-  - [x] write-role  
+- [x] clear  
+- [ ] upload  
+- [x] download  
+- [ ] update  
+- [x] clear cache  
+- [x] sql  
+- [x] table  
+- [ ] show  
+- [x] write-role  
 
 _Prefix_: '.'  
 
@@ -91,10 +91,16 @@ with config path:
 $ python3 userInteractionBot.py -t TOKEN -p PATH-CONFIG
 $ ./userInteractionBot.py -t TOKEN -p PATH-CONFIG
 ```
+
+### events
+
+- [x] on_ready  
+- [x] on_member_join   
+  
 ### commands
 
-  - [x] identify  
-  - [ ] update-my-data  
+- [x] identify  
+- [ ] update-my-data  
 
 _Prefix_: '.'  
 
