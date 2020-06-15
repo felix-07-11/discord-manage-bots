@@ -107,7 +107,7 @@ $ ./userInteractionBot.py -t TOKEN -p PATH-CONFIG
 - [x] write-role
 - [x] instert members  
 
-_Prefix_: '.'  
+_Prefix_: '-'  
 
 > _dm only_  
 > __identify__ clan_member: [str -> bool], name: optional[str] = "", name_wot. optional[str] = ""  
