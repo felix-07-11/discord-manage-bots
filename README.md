@@ -24,7 +24,7 @@ There are bots to manage a World of Tanks Clan Server, if you don't edit the sou
 
 ## manageBot.py
 
-### start
+### start [Linux]
 ```sh
 $ python3 manageBot.py -t TOKEN
 $ ./manageBot.py -t TOKEN
@@ -84,7 +84,7 @@ _Prefix_: '.'
 
 ## userInteraktionBot.py
 
-### start
+### start [Linux]
 ```sh
 $ python3 userInteractionBot.py -t TOKEN
 $ ./userInteractionBot.py -t TOKEN
