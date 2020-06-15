@@ -2,6 +2,12 @@
 Discord bots to manage the members of the servers.  
 There are bots to manage a World of Tanks Clan Server, if you don't edit the sourcecode.
 
+## suported OS (tested)
+- [x] Linux
+  - Kernel: 5.4.39-1-MANJARO
+- [ ] Windows >= 10
+- [ ] Mac OSX
+
 ## requierements
 - Python libaries:
   - argparse
