@@ -9,9 +9,10 @@ There are bots to manage a World of Tanks Clan Server, if you don't edit the sou
 
 ## suported OS (tested)
 - [x] Linux
-  - Kernel: 5.4.39-1-MANJARO
 - [ ] Windows >= 10
 - [ ] Mac OSX
+
+> You can only use the Bot-Configurator on Unix Operating Sytems!
 
 ## requierements
 - Python libaries:
