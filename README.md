@@ -75,11 +75,11 @@ _Prefix_: '-'
 
 <br><br>
 
-> _dm only_  
+> _dm_only_  
 > __identify__ clan_member: [str -> bool], name: optional[str] = "", name_wot. optional[str] = ""  
 > complete db with [name] and [name_wot] if clan_member is True
 
-> _dm only_  
+> _dm_only_  
 > __update-my-data__ clan_member: [str -> bool], name: optional[str] = "", name_wot. optional[str] = ""  
 > complete db with [name] and [name_wot] if clan_member is True
 > delete [name] and [name_wot] in db if clan_member is False
