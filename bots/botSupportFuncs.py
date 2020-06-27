@@ -13,6 +13,12 @@ class Table():
 class CheckNameError(Exception):
     pass
 
+async def command_react(ctx, emoji='🆗'):
+    for reaction in ctx.message.reactions:
+        if reaction.emoji == emoji:
+            return
+    await ctx.message.add_reaction(emoji)
+
 def get_PATHS(json_PATH):
     with open(json_PATH) as file:
         jsonDict = json.loads(file.read())
@@ -31,7 +37,7 @@ def get_FILE(path):
 def get_ROLES(json_PATH):
     with open(json_PATH) as file:
         jsonDict = json.loads(file.read())
-    return jsonDict["ROLE_ADUSER"], jsonDict["ROLE_BOTS"]
+    return jsonDict["ROLE_ADUSER"]
 
 def sql(statement: str, sql_path: str):
     with sqlite3.connect(sql_path) as conn:
