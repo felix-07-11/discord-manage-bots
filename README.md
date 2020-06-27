@@ -1,4 +1,7 @@
 # discord-manage-bots
+
+![GitHub](https://img.shields.io/github/license/felix-07-11/discord-manage-bots?style=flat-square) ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/felix-07-11/discord-manage-bots?label=version&style=flat-square) ![GitHub last commit](https://img.shields.io/github/last-commit/felix-07-11/discord-manage-bots?style=flat-square) ![GitHub issues](https://img.shields.io/github/issues/felix-07-11/discord-manage-bots?style=flat-square)
+
 Discord bots to manage the members of the servers.  
 There are bots to manage a World of Tanks Clan Server, if you don't edit the sourcecode.
 
@@ -39,7 +42,7 @@ $ python3 manageBot.py -t TOKEN
 $ ./manageBot.py -t TOKEN
 ```
 with config path:
-```sh
+```s
 $ python3 manageBot.py -t TOKEN -p PATH-CONFIG
 $ ./manageBot.py -t TOKEN -p PATH-CONFIG
 ```
