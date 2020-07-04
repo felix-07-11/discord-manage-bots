@@ -157,7 +157,6 @@ async def on_voice_state_update(member, before, after):
 
 # – identification –
 
-# NOTE: ready to test
 @bot.command('identify')
 @commands.dm_only()
 async def identify(ctx, clan_member, name: typing.Optional[str] = "", name_wot: typing.Optional[str] = ""):
@@ -187,6 +186,8 @@ async def identify(ctx, clan_member, name: typing.Optional[str] = "", name_wot: 
             cur = conn.cursor()
             try:
                 cur.execute('UPDATE clan_members SET identification=1, name=?, name_wot=? WHERE id=?', (name if not name.lower() == 'none' else None, bsf.check_str(name_wot, minlen=2), ctx.author.id))
+
+                await GUILD.get_member(ctx.author.id).add_roles(discord.utils.get(GUILD.roles, name='clan members'))
                 await ctx.send(bsf.get_JSON(PATH_CONFIG)["D_MESSAGES"]["successful identification"])
                 await bot.get_channel(bsf.get_JSON(PATH_CONFIG)["COMMAND_PROMPT_ID"]).send(f':white_check_mark: {str(ctx.author.mention)} identified himself/herself successfully...')
             except Exception as e:
@@ -344,7 +345,7 @@ async def write_channel(ctx, channels: commands.Greedy[discord.TextChannel], mes
         except Exception as e:
             pass
 
-    await bot.get_channel(bsf.get_JSON(PATH_CONFIG)["COMMAND_PROMPT_ID"]).send(f':white_check_mark: Your message was send to {channels_send}'.replace(', ', '.'))
+    await bot.get_channel(bsf.get_JSON(PATH_CONFIG)["COMMAND_PROMPT_ID"]).send(f':white_check_mark: Your message was send to {channels_send}')
 
 # function to write a dm message to all members in a role
 @bot.command(name='write-role')
@@ -371,7 +372,7 @@ async def write_role(ctx, role: commands.Greedy[discord.Role], message):
         except Exception as e:
             pass
 
-    await bot.get_channel(bsf.get_JSON(PATH_CONFIG)["COMMAND_PROMPT_ID"]).send(f':white_check_mark: Your message was send to {members_send}'.replace(', ', '.'))
+    await bot.get_channel(bsf.get_JSON(PATH_CONFIG)["COMMAND_PROMPT_ID"]).send(f':white_check_mark: Your message was send to {members_send}')
 
 # function to write a dm message to all members in a role and a message to channel
 @bot.command(name='write-server')
@@ -405,7 +406,7 @@ async def fix(ctx, *args):
                     r = cur.fetchall()
 
                     if r == []:
-                        no_registered_members += str(member) + ', '
+                        no_registered_members += str(member.mention) + ', '
                         await on_member_join(member)
 
                 if no_registered_members == '':
@@ -455,7 +456,23 @@ async def fix(ctx, *args):
 
                 conn.commit()
 
+        elif arg == 'db-identify':
 
+            with sqlite3.connect(PATH_SQL) as conn:
+                cur = conn.cursor()
+                no_registered_members = ''
+                for member in GUILD.members:
+                    cur.execute('SELECT identification FROM clan_members WHERE id=?;', (member.id,))
+                    r = cur.fetchall()
+
+                    if r[0][0] == 0:
+                        no_registered_members += str(member) + ', '
+                        await on_member_join(member)
+
+                if no_registered_members == '':
+                    await bot.get_channel(bsf.get_JSON(PATH_CONFIG)["COMMAND_PROMPT_ID"]).send(f':white_check_mark: All members of the server are registered')
+                else:
+                    await bot.get_channel(bsf.get_JSON(PATH_CONFIG)["COMMAND_PROMPT_ID"]).send(f':warning: These are not identified: {no_registered_members}')
 
         elif arg == 'path-config':
             pass
