@@ -89,8 +89,8 @@ async def on_member_join(member: discord.Member):
         with sqlite3.connect(PATH_SQL) as conn:
             cur = conn.cursor()
 
-            cur.execute('INSERT INTO clan_members (id, name_discord, name_displayed) VALUES (?, ?, ?)', (member.id, str(member), member.display_name))
-            cur.execute('INSERT INTO clan_member_statistics (id) VALUES (?)', (member.id,))
+            cur.execute('INSERT OR REPLACE INTO clan_members (id, name_discord, name_displayed) VALUES (?, ?, ?)', (member.id, str(member), member.display_name))
+            cur.execute('INSERT OR REPLACE INTO clan_member_statistics (id) VALUES (?)', (member.id,))
 
             conn.commit()
 
@@ -106,8 +106,8 @@ async def on_member_join(member: discord.Member):
         with sqlite3.connect(PATH_SQL) as conn:
             cur = conn.cursor()
 
-            cur.execute('INSERT INTO clan_members (id, name, name_discord, name_displayed, permanent_member, identification) VALUES (?, ?, ?, ?, ?, ?)', (member.id, '~bot', str(member), member.display_name, 1, 1))
-            cur.execute('INSERT INTO clan_member_statistics (id) VALUES (?)', (member.id,))
+            cur.execute('INSERT OR REPLACE INTO clan_members (id, name, name_discord, name_displayed, permanent_member, identification) VALUES (?, ?, ?, ?, ?, ?)', (member.id, '~bot', str(member), member.display_name, 1, 1))
+            cur.execute('INSERT OR REPLACE INTO clan_member_statistics (id) VALUES (?)', (member.id,))
 
             conn.commit()
         await bot.get_channel(bsf.get_JSON(PATH_CONFIG)["COMMAND_PROMPT_ID"]).send(f':arrow_right: Bot {str(member.mention)} joined the server...')
